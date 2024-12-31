@@ -1,6 +1,6 @@
 # CODTECH-TASK4
 
-# TASK 4 : FIR FITER DESIGN
+# TASK 4 : FIR FILTER DESIGN
 
 The humble FIR filter is one of the most basic building blocks in digital signal processing on an FPGA, so it's important to know how to throw together a basic module of one with a given number of taps and their corresponding coefficient values. Thus, in this mini-series on the practical way of getting started with DSP basics on FPGAs, I'm going to start with a simple 15-tap low pass filter FIR that I generate the initial coefficient values for in Matlab then convert those values for use in a Verilog module.
 A finite impulse response or FIR filter is defined as a filter with an impulse response that settles to a zero value over a certain period of time, thus making it finite. This amount of time that it takes the impulse response to settle to zero is directly related to the order of the filter (the number of taps) which is the order of the FIR's underlying transfer function polynomial. A FIR's transfer function contains no feedback, so if you feed in a single impulse of value 1 followed by a bunch of zero values, the output will simply be the coefficient values of the filter.
