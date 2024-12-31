@@ -17,5 +17,8 @@ Here's an overview of the logic design for the FIR module:
 ![Uploading image.png…]()
 
 
+![TASK 4 OUTPUT WAVEFORM](https://github.com/user-attachments/assets/19c96229-cdf8-4980-aec0-ecc846977292)
+
+
 
 
