@@ -1,0 +1,41 @@
+/* FIR Filter test bench */
+
+module tb_fir_filter; 
+ 
+reg clk; 
+reg reset; 
+reg signed [15:0] x; 
+wire signed [31:0] y; 
+ 
+fir_filter uut ( 
+    .clk(clk), 
+    .reset(reset), 
+    .x(x), 
+    .y(y) 
+); 
+ 
+// Clock generation 
+initial begin 
+    clk = 0; 
+    forever #5 clk = ~clk; // 10 time units period 
+end 
+ 
+initial begin 
+    reset = 1; 
+    #10; 
+    reset = 0; 
+ 
+    // Test input signal 
+    x = 16'h01; #10; 
+    x = 16'h02; #10; 
+    x = 16'h03; #10; 
+    x = 16'h04; #10; 
+ 
+    // Finish simulation 
+    #50;
+  $dumpvars(1);
+  $dumpfile("dump.vcd");
+    $finish; 
+end 
+ 
+endmodule
